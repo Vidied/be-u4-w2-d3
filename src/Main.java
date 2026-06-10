@@ -2,7 +2,7 @@ import Entities.Customer;
 import Entities.Order;
 import Entities.Product;
 
-import java.sql.SQLOutput;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -55,12 +55,12 @@ public class Main {
 
     List<Order> globalOrders = List.of(o1, o2, o3, o4);
 
-
+//ESERCIZIO 1
     List<Product> booksFilter = globalProducts.stream().filter(product -> product.getPrice() > 100).filter(product -> product.getCategory().equals("Books")).toList();
     System.out.println("Prodotti della categoria Books");
     booksFilter.forEach(System.out::println);
 
-
+//ESERCIZIO 2
     List<Order> babyOrder = globalOrders.stream()
         .filter(order -> order.getProducts().stream()
             .anyMatch(product -> product.getCategory().equals("Baby"))
@@ -69,7 +69,7 @@ public class Main {
     System.out.println("\nOrdini contenenti un prodotto della categoria baby");
     babyOrder.forEach(System.out::println);
 
-
+//ESERCIZIO 3
     List<Product> boysDiscount = globalProducts.stream().filter(product -> product.getCategory().equals("Boys"))
         .map(product -> {
           double prezzoDiscount = product.getPrice() * 0.9;
@@ -80,9 +80,9 @@ public class Main {
     System.out.println("\nProdotti della categoria boys con un prezzo scontato del 10%");
     boysDiscount.forEach(System.out::println);
 
-
+//ESERCIZIO 4
     LocalDate dataInizio = LocalDate.of(2021, 2, 1);
-    LocalDate dataFine = LocalDate.of(2021, 04, 1);
+    LocalDate dataFine = LocalDate.of(2021, 4, 1);
 
     List<Product> customerProductFilter = globalOrders.stream()
         .filter(order -> order.getCustomer().getTier().equals(2))
