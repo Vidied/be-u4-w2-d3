@@ -56,7 +56,7 @@ public class Main {
     List<Order> globalOrders = List.of(o1, o2, o3, o4);
 
 //ESERCIZIO 1
-    List<Product> booksFilter = globalProducts.stream().filter(product -> product.getPrice() > 100).filter(product -> product.getCategory().equals("Books")).toList();
+    List<Product> booksFilter = globalProducts.stream().filter(product -> product.getPrice() > 100 && product.getCategory().equals("Books")).toList();
     System.out.println("Prodotti della categoria Books");
     booksFilter.forEach(System.out::println);
 
