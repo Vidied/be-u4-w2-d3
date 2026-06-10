@@ -11,34 +11,29 @@ public class Main {
 
 
 
-    Customer c1 = new Customer();
-    c1.setId(1L); c1.setName("Mario Rossi"); c1.setTier(1);
-
-    Customer c2 = new Customer();
-    c2.setId(2L); c2.setName("Luigi Verdi"); c2.setTier(2);
-
-    Customer c3 = new Customer();
-    c3.setId(3L); c3.setName("Anna Bianchi"); c3.setTier(2);
+    Customer c1 = new Customer(1L, "Mario Rossi", 1);
 
 
+    Customer c2 = new Customer(2L, "Luigi Verdi", 2);
 
-    Product p1 = new Product();
-    p1.setId(101L); p1.setName("Il Signore degli Anelli"); p1.setCategory("Books"); p1.setPrice(120.0);
 
-    Product p2 = new Product();
-    p2.setId(102L); p2.setName("Java Guida Completa"); p2.setCategory("Books"); p2.setPrice(45.5);
+    Customer c3 = new Customer(3L, "Anna Bianchi", 2);
 
-    Product p3 = new Product();
-    p3.setId(103L); p3.setName("Passeggino Leggero"); p3.setCategory("Baby"); p3.setPrice(150.0);
 
-    Product p4 = new Product();
-    p4.setId(104L); p4.setName("Biberon Anticolica"); p4.setCategory("Baby"); p4.setPrice(15.0);
 
-    Product p5 = new Product();
-    p5.setId(105L); p5.setName("T-Shirt Sportiva Boys"); p5.setCategory("Boys"); p5.setPrice(25.0);
 
-    Product p6 = new Product();
-    p6.setId(106L); p6.setName("Scarpe da ginnastica"); p6.setCategory("Boys"); p6.setPrice(80.0);
+    Product p1 = new Product(101L,"Il Signore degli anelli", "Books", 120.0);
+
+    Product p2 = new Product( 02L, "Java Guida Completa", "Books", 5.5);
+
+    Product p3 = new Product( 103L, "Passeggino Leggero", "Baby", 150.0);
+
+    Product p4 = new Product( 104L, "Biberon Anticolica", "Baby", 15.0);
+
+    Product p5 = new Product(105L, "T-Shirt Sportiva Boys", "Boys", 25.0);
+
+    Product p6 = new Product(106L, "Scarpe da ginnastica", "Boys", 80.0);
+
 
 
 
