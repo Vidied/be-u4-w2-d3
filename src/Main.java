@@ -24,7 +24,7 @@ public class Main {
 
     Product p1 = new Product(101L,"Il Signore degli anelli", "Books", 120.0);
 
-    Product p2 = new Product( 02L, "Java Guida Completa", "Books", 5.5);
+    Product p2 = new Product( 102L, "Java Guida Completa", "Books", 5.5);
 
     Product p3 = new Product( 103L, "Passeggino Leggero", "Baby", 150.0);
 
