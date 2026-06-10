@@ -66,7 +66,7 @@ public class Main {
             .anyMatch(product -> product.getCategory().equals("Baby"))
     ).toList();
 
-    System.out.println("Ordini contenenti un prodotto della categoria baby");
+    System.out.println("\nOrdini contenenti un prodotto della categoria baby");
     babyOrder.forEach(System.out::println);
 
 
@@ -77,8 +77,24 @@ public class Main {
           return product;
         }).toList();
 
-    System.out.println("Prodotti della categoria boys con un prezzo scontato del 10%");
+    System.out.println("\nProdotti della categoria boys con un prezzo scontato del 10%");
     boysDiscount.forEach(System.out::println);
+
+
+    LocalDate dataInizio = LocalDate.of(2021, 2, 1);
+    LocalDate dataFine = LocalDate.of(2021, 04, 1);
+
+    List<Product> customerProductFilter = globalOrders.stream()
+        .filter(order -> order.getCustomer().getTier().equals(2))
+        .filter(order -> !order.getOrderDate().isBefore(dataInizio) && !order.getOrderDate().isAfter(dataFine))
+        .flatMap(order -> order.getProducts().stream())
+        .toList();
+
+    System.out.println("\nProdotti ordinati dai clienti di tier 2 nella fascia di data specificata");
+    customerProductFilter.forEach(System.out::println);
+
+
+
 
   }
 }
