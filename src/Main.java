@@ -69,5 +69,16 @@ public class Main {
     System.out.println("Ordini contenenti un prodotto della categoria baby");
     babyOrder.forEach(System.out::println);
 
+
+    List<Product> boysDiscount = globalProducts.stream().filter(product -> product.getCategory().equals("Boys"))
+        .map(product -> {
+          double prezzoDiscount = product.getPrice() * 0.9;
+          product.setPrice(prezzoDiscount);
+          return product;
+        }).toList();
+
+    System.out.println("Prodotti della categoria boys con un prezzo scontato del 10%");
+    boysDiscount.forEach(System.out::println);
+
   }
 }
