@@ -1,6 +1,8 @@
 import Entities.Customer;
 import Entities.Order;
 import Entities.Product;
+
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -55,7 +57,17 @@ public class Main {
 
 
     List<Product> booksFilter = globalProducts.stream().filter(product -> product.getPrice() > 100).filter(product -> product.getCategory().equals("Books")).toList();
-    System.out.println(booksFilter);
+    System.out.println("Prodotti della categoria Books");
+    booksFilter.forEach(System.out::println);
+
+
+    List<Order> babyOrder = globalOrders.stream()
+        .filter(order -> order.getProducts().stream()
+            .anyMatch(product -> product.getCategory().equals("Baby"))
+    ).toList();
+
+    System.out.println("Ordini contenenti un prodotto della categoria baby");
+    babyOrder.forEach(System.out::println);
 
   }
 }
